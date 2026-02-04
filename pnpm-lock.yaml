@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@hookform/resolvers':
-    specifier: ^3.6.0
-    version: 3.10.0(react-hook-form@7.71.1)
+    specifier: ^5.2.2
+    version: 5.2.2(react-hook-form@7.71.1)
   '@stripe/stripe-js':
     specifier: ^3.5.0
     version: 3.5.0
@@ -27,8 +27,8 @@ dependencies:
     specifier: ^3.1.0
     version: 3.2.0(date-fns@3.6.0)
   dotenv:
-    specifier: ^17.2.3
-    version: 17.2.3
+    specifier: ^16.4.5
+    version: 16.6.1
   framer-motion:
     specifier: ^11.2.0
     version: 11.18.2(react-dom@18.3.1)(react@18.3.1)
@@ -959,11 +959,12 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@hookform/resolvers@3.10.0(react-hook-form@7.71.1):
-    resolution: {integrity: sha512-79Dv+3mDF7i+2ajj7SkypSKHhl1cbln1OGavqrsF7p6mbUv11xpqpacPsGDCTRvCSjEEIez2ef1NveSVL3b0Ag==}
+  /@hookform/resolvers@5.2.2(react-hook-form@7.71.1):
+    resolution: {integrity: sha512-A/IxlMLShx3KjV/HeTcTfaMxdwy690+L/ZADoeaTltLx+CVuzkeVIPuybK3jrRfw7YZnmdKsVVHAlEPIAEUNlA==}
     peerDependencies:
-      react-hook-form: ^7.0.0
+      react-hook-form: ^7.55.0
     dependencies:
+      '@standard-schema/utils': 0.3.0
       react-hook-form: 7.71.1(react@18.3.1)
     dev: false
 
@@ -1392,6 +1393,10 @@ packages:
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
+
+  /@standard-schema/utils@0.3.0:
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
+    dev: false
 
   /@stripe/stripe-js@3.5.0:
     resolution: {integrity: sha512-pKS3wZnJoL1iTyGBXAvCwduNNeghJHY6QSRSNNvpYnrrQrLZ6Owsazjyynu0e0ObRgks0i7Rv+pe2M7/MBTZpQ==}
@@ -2875,8 +2880,8 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /dotenv@17.2.3:
-    resolution: {integrity: sha512-JVUnt+DUIzu87TABbhPmNfVdBDt18BLOWjMUFJMSi/Qqg7NTYtabbvSNJGOJ7afbRuv9D/lngizHtP7QyLQ+9w==}
+  /dotenv@16.6.1:
+    resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
     engines: {node: '>=12'}
     dev: false
 
