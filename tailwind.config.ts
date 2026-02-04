@@ -134,7 +134,7 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(function ({ addUtilities }) {
+    plugin(function ({ addUtilities }: PluginAPI) {
       const animationDelays: Record<string, { 'animation-delay': string }> = {
         '.animation-delay-100': { 'animation-delay': '100ms' },
         '.animation-delay-200': { 'animation-delay': '200ms' },
