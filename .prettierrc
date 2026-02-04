@@ -14,7 +14,19 @@
   "proseWrap": "preserve",
   "htmlWhitespaceSensitivity": "css",
   "embeddedLanguageFormatting": "auto",
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-sql"],
   "tailwindFunctions": ["cn", "clsx", "cva"],
-  "tailwindConfig": "./tailwind.config.ts"
+  "tailwindConfig": "./tailwind.config.ts",
+  "overrides": [
+    {
+      "files": "*.sql",
+      "options": {
+        "parser": "sql",
+        "plugins": ["prettier-plugin-sql"],
+        "language": "postgresql",
+        "keywordCase": "upper",
+        "identifierCase": "lower"
+      }
+    }
+  ]
 }

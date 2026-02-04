@@ -19,7 +19,7 @@ jobs:
   # Job 1: Linting y Type Checking
   # ================================================
   lint:
-    name:  Lint & Type Check
+    name: Lint & Type Check
     runs-on: ubuntu-latest
     timeout-minutes: 10
 

@@ -259,6 +259,14 @@ module.exports = {
         '@typescript-eslint/no-require-imports': 'off',
       },
     },
+    // Archivos generados (Supabase Types)
+    {
+      files: ['src/types/database.types.ts'],
+      rules: {
+        '@typescript-eslint/consistent-type-definitions': 'off',
+        '@typescript-eslint/no-explicit-any': 'off', // Supabase a menudo genera anys en Json types
+      },
+    },
   ],
 
   // Archivos a ignorar
