@@ -125,13 +125,13 @@
 | 123 | 02.5.3   | CAJA 2   | Verificar .gitignore incluye .env.local                      | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 124 | 02.5.4   | CAJA 2   | Crear src/lib/env.ts                                         | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 125 | 02.5.5   | CAJA 2   | Verificar validación de env                                  | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
-| 126 | 02.6.1   | CAJA 2   | Crear proyecto en Supabase                                   | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 127 | 02.6.2   | CAJA 2   | Configurar Supabase CLI local                                | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 128 | 02.6.3   | CAJA 2   | Crear proyecto en Vercel                                     | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 129 | 02.6.4   | CAJA 2   | Configurar secrets en GitHub                                 | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 130 | 02.6.5   | CAJA 2   | Crear cuenta y productos en Stripe                           | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 131 | 02.6.6   | CAJA 2   | Crear cuenta en Replicate                                    | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 132 | 02.6.7   | CAJA 2   | Crear guía de setup documentada                              | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
+| 126 | 02.6.1   | CAJA 2   | Crear proyecto en Supabase                                   | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 127 | 02.6.2   | CAJA 2   | Configurar Supabase CLI local                                | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 128 | 02.6.3   | CAJA 2   | Crear proyecto en Vercel                                     | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 129 | 02.6.4   | CAJA 2   | Configurar secrets en GitHub                                 | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 130 | 02.6.5   | CAJA 2   | Crear cuenta y productos en Stripe                           | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 131 | 02.6.6   | CAJA 2   | Crear cuenta en Replicate                                    | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 132 | 02.6.7   | CAJA 2   | Crear guía de setup documentada                              | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 133 | 02.7.1   | CAJA 2   | Crear directorio .antigravity                                | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 134 | 02.7.2   | CAJA 2   | Crear instructions.md para Antigravity                       | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 135 | 02.7.3   | CAJA 2   | Crear .vscode/settings.json                                  | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
