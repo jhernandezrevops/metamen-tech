@@ -51,3 +51,7 @@ logs/
 .cache/
 .eslintcache
 .prettiercache
+
+.env.local
+
+.env.local

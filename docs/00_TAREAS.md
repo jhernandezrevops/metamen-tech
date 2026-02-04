@@ -119,12 +119,12 @@
 | 117 | 02.4.4   | CAJA 2   | Crear production.yml                                         | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [/]      |
 | 118 | 02.4.5   | CAJA 2   | Crear dependabot.yml                                         | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [/]      |
 | 119 | 02.4.6   | CAJA 2   | Crear CODEOWNERS                                             | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [/]      |
-| 120 | 02.4.7   | CAJA 2   | Configurar secrets en GitHub                                 | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 121 | 02.5.1   | CAJA 2   | Crear .env.example                                           | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 122 | 02.5.2   | CAJA 2   | Crear .env.local desde template                              | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 123 | 02.5.3   | CAJA 2   | Verificar .gitignore incluye .env.local                      | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 124 | 02.5.4   | CAJA 2   | Crear src/lib/env.ts                                         | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 125 | 02.5.5   | CAJA 2   | Verificar validación de env                                  | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
+| 120 | 02.4.7   | CAJA 2   | Configurar secrets en GitHub                                 | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 121 | 02.5.1   | CAJA 2   | Crear .env.example                                           | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 122 | 02.5.2   | CAJA 2   | Crear .env.local desde template                              | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 123 | 02.5.3   | CAJA 2   | Verificar .gitignore incluye .env.local                      | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 124 | 02.5.4   | CAJA 2   | Crear src/lib/env.ts                                         | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 125 | 02.5.5   | CAJA 2   | Verificar validación de env                                  | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 126 | 02.6.1   | CAJA 2   | Crear proyecto en Supabase                                   | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 127 | 02.6.2   | CAJA 2   | Configurar Supabase CLI local                                | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 128 | 02.6.3   | CAJA 2   | Crear proyecto en Vercel                                     | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
