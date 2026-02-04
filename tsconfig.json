@@ -25,7 +25,10 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    // JSX
     "jsx": "preserve",
+    // Paths
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
@@ -36,17 +39,26 @@
       "@/types/*": ["./src/types/*"],
       "@/styles/*": ["./src/styles/*"]
     },
+    // Output
     "noEmit": true,
     "incremental": true,
+    // Next.js Plugin
     "plugins": [
       {
         "name": "next"
       }
     ],
+    // Skip lib check for faster builds
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": true
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "*.config.js",
+    ".eslintrc.js"
+  ],
   "exclude": ["node_modules", ".next", "out", "coverage", "playwright-report"]
 }

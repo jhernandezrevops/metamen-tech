@@ -106,13 +106,13 @@
 | 104 | 02.2.4   | CAJA 2   | Crear .editorconfig                                          | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 105 | 02.2.5   | CAJA 2   | Instalar dependencias de linting                             | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 106 | 02.2.6   | CAJA 2   | Verificar linting                                            | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
-| 107 | 02.3.1   | CAJA 2   | Instalar Husky y Lint-Staged                                 | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 108 | 02.3.2   | CAJA 2   | Inicializar Husky                                            | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 109 | 02.3.3   | CAJA 2   | Crear pre-commit hook                                        | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 110 | 02.3.4   | CAJA 2   | Crear pre-push hook                                          | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 111 | 02.3.5   | CAJA 2   | Crear lint-staged.config.js                                  | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 112 | 02.3.6   | CAJA 2   | Verificar hooks                                              | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 113 | 02.3.7   | CAJA 2   | Configurar Commitlint                                        | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
+| 107 | 02.3.1   | CAJA 2   | Instalar Husky y Lint-Staged                                 | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 108 | 02.3.2   | CAJA 2   | Inicializar Husky                                            | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 109 | 02.3.3   | CAJA 2   | Crear pre-commit hook                                        | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 110 | 02.3.4   | CAJA 2   | Crear pre-push hook                                          | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 111 | 02.3.5   | CAJA 2   | Crear lint-staged.config.js                                  | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 112 | 02.3.6   | CAJA 2   | Verificar hooks                                              | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 113 | 02.3.7   | CAJA 2   | Configurar Commitlint                                        | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 114 | 02.4.1   | CAJA 2   | Crear directorio .github/workflows                           | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 115 | 02.4.2   | CAJA 2   | Crear ci.yml                                                 | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 116 | 02.4.3   | CAJA 2   | Crear preview\.yml                                           | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |

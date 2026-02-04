@@ -268,7 +268,6 @@ module.exports = {
     'out/',
     'coverage/',
     'playwright-report/',
-    '*.config.js',
     'next-env.d.ts',
   ],
 };
