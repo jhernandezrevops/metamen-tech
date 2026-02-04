@@ -134,6 +134,10 @@ CREATE TABLE public.avatar_states (
 
 CREATE INDEX idx_avatar_states_user_id ON public.avatar_states (user_id);
 
+CREATE INDEX idx_avatar_states_current_day ON public.avatar_states (current_day);
+
+CREATE INDEX idx_avatar_states_current_level ON public.avatar_states (current_level);
+
 CREATE TRIGGER set_avatar_states_updated_at before
 UPDATE ON public.avatar_states FOR each ROW
 EXECUTE function public.fn_update_updated_at ();
