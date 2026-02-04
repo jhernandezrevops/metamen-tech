@@ -132,13 +132,13 @@
 | 130 | 02.6.5   | CAJA 2   | Crear cuenta y productos en Stripe                           | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 131 | 02.6.6   | CAJA 2   | Crear cuenta en Replicate                                    | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 132 | 02.6.7   | CAJA 2   | Crear guía de setup documentada                              | SUBCAJA 02.6  | Servicios Externos                   | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
-| 133 | 02.7.1   | CAJA 2   | Crear directorio .antigravity                                | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 134 | 02.7.2   | CAJA 2   | Crear instructions.md para Antigravity                       | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 135 | 02.7.3   | CAJA 2   | Crear .vscode/settings.json                                  | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 136 | 02.7.4   | CAJA 2   | Crear .vscode/extensions.json                                | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 137 | 02.7.5   | CAJA 2   | Crear .vscode/launch.json                                    | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 138 | 02.7.6   | CAJA 2   | Crear scripts/seed.ts                                        | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 139 | 02.7.7   | CAJA 2   | Verificar configuración de dev tools                         | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
+| 133 | 02.7.1   | CAJA 2   | Crear directorio .antigravity                                | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 134 | 02.7.2   | CAJA 2   | Crear instructions.md para Antigravity                       | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 135 | 02.7.3   | CAJA 2   | Crear .vscode/settings.json                                  | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 136 | 02.7.4   | CAJA 2   | Crear .vscode/extensions.json                                | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 137 | 02.7.5   | CAJA 2   | Crear .vscode/launch.json                                    | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 138 | 02.7.6   | CAJA 2   | Crear scripts/seed.ts                                        | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 139 | 02.7.7   | CAJA 2   | Verificar configuración de dev tools                         | SUBCAJA 02.7  | Herramientas de Desarrollo           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 140 | 02.8.1   | CAJA 2   | Crear estructura de carpetas                                 | SUBCAJA 02.8  | Estructura de Carpetas               | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 141 | 02.8.2   | CAJA 2   | Crear archivos placeholder                                   | SUBCAJA 02.8  | Estructura de Carpetas               | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 142 | 02.8.3   | CAJA 2   | Documentar estructura en README                              | SUBCAJA 02.8  | Estructura de Carpetas               | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
