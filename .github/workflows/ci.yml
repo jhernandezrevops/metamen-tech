@@ -222,7 +222,7 @@ jobs:
   # Job 6: Status Check (Para branch protection)
   # ================================================
   ci-success:
-    name: ✅ CI Success
+    name: CI Success
     runs-on: ubuntu-latest
     needs: [lint, unit-tests, build, security]
     if: always()
