@@ -1,0 +1,17 @@
+# .github/CODEOWNERS
+# Propietarios de código para review automático
+
+# Por defecto, el owner principal
+* @riska
+
+# Rutas críticas requieren review específico
+/src/lib/core/ @riska
+/src/actions/ @riska
+/supabase/migrations/ @riska
+
+# Configuración de CI/CD
+/.github/ @riska
+
+# Configuración de seguridad
+/src/middleware.ts @riska
+/src/lib/supabase/ @riska

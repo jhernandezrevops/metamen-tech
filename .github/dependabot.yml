@@ -1,0 +1,60 @@
+version: 2
+
+updates:
+  # npm/pnpm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Mexico_City"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "riska"
+    labels:
+      - "dependencies"
+      - "automated"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    groups:
+      # Agrupar actualizaciones de Next.js
+      next:
+        patterns:
+          - "next"
+          - "next-*"
+          - "@next/*"
+      # Agrupar actualizaciones de React
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react*"
+      # Agrupar actualizaciones de testing
+      testing:
+        patterns:
+          - "vitest"
+          - "@testing-library/*"
+          - "playwright"
+          - "@playwright/*"
+      # Agrupar actualizaciones de linting
+      linting:
+        patterns:
+          - "eslint*"
+          - "@typescript-eslint/*"
+          - "prettier*"
+    ignore:
+      # Ignorar major versions de algunas dependencias críticas
+      - dependency-name: "next"
+        update-types: ["version-update:semver-major"]
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "github-actions"
+      - "automated"
