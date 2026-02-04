@@ -1,3 +1,5 @@
+import plugin from 'tailwindcss/plugin';
+
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -26,10 +28,10 @@ const config: Config = {
         'accent-green-dim': '#228B22',
         'accent-blue': '#0A84FF',
         'accent-purple': '#BF5AF2',
-        'success': '#30D158',
-        'warning': '#FFD60A',
-        'error': '#FF3B30',
-        'info': '#0A84FF',
+        success: '#30D158',
+        warning: '#FFD60A',
+        error: '#FF3B30',
+        info: '#0A84FF',
         'border-default': '#27272A',
         'border-subtle': '#1F1F22',
         'border-strong': '#3F3F46',
@@ -39,11 +41,11 @@ const config: Config = {
         mono: ['var(--font-jetbrains)', 'monospace'],
       },
       fontSize: {
-        'xs': ['0.75rem', { lineHeight: '1rem' }],
-        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-        'base': ['1rem', { lineHeight: '1.5rem' }],
-        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
-        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        xs: ['0.75rem', { lineHeight: '1rem' }],
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],
+        base: ['1rem', { lineHeight: '1.5rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '1.75rem' }],
         '2xl': ['1.5rem', { lineHeight: '2rem' }],
         '3xl': ['2rem', { lineHeight: '2.25rem' }],
         '4xl': ['2.5rem', { lineHeight: '2.5rem' }],
@@ -58,10 +60,10 @@ const config: Config = {
         '30': '7.5rem',
       },
       borderRadius: {
-        'sm': '4px',
-        'md': '8px',
-        'lg': '12px',
-        'xl': '16px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
         '2xl': '24px',
       },
       boxShadow: {
@@ -70,8 +72,8 @@ const config: Config = {
         'glow-red': '0 0 20px rgba(255, 59, 48, 0.3)',
         'glow-green': '0 0 20px rgba(48, 209, 88, 0.3)',
         'glow-blue': '0 0 20px rgba(10, 132, 255, 0.3)',
-        'elevated': '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3)',
-        'card': '0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4)',
+        elevated: '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3)',
+        card: '0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4)',
       },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-out',
@@ -80,9 +82,9 @@ const config: Config = {
         'slide-down': 'slideDown 0.3s ease-out',
         'scale-in': 'scaleIn 0.2s ease-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'shake': 'shake 0.5s ease-in-out',
-        'heartbeat': 'heartbeat 1s ease-in-out infinite',
+        glow: 'glow 2s ease-in-out infinite alternate',
+        shake: 'shake 0.5s ease-in-out',
+        heartbeat: 'heartbeat 1s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -132,7 +134,7 @@ const config: Config = {
     },
   },
   plugins: [
-    function({ addUtilities }: { addUtilities: Function }) {
+    plugin(function ({ addUtilities }) {
       const animationDelays: Record<string, { 'animation-delay': string }> = {
         '.animation-delay-100': { 'animation-delay': '100ms' },
         '.animation-delay-200': { 'animation-delay': '200ms' },
@@ -142,7 +144,7 @@ const config: Config = {
         '.animation-delay-1000': { 'animation-delay': '1000ms' },
       };
       addUtilities(animationDelays);
-    },
+    }),
   ],
 };
 

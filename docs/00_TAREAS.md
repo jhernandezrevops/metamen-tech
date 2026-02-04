@@ -92,20 +92,20 @@
 | 90  | 01.9.4   | CAJA 1   | Documentar Headers de Seguridad                              | SUBCAJA 01.9  | Security Specification               | \docs\00\_planning\cajas\caja\_1.0.0.md  | \[X]     |
 | 91  | 01.9.5   | CAJA 1   | Documentar Rate Limiting                                     | SUBCAJA 01.9  | Security Specification               | \docs\00\_planning\cajas\caja\_1.0.0.md  | \[X]     |
 | 92  | 01.9.6   | CAJA 1   | Mapear OWASP Top 10                                          | SUBCAJA 01.9  | Security Specification               | \docs\00\_planning\cajas\caja\_1.0.0.md  | \[X]     |
-| 93  | 02.1.1   | CAJA 2   | Inicializar proyecto Next.js                                 | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 94  | 02.1.2   | CAJA 2   | Configurar package.json completo                             | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 95  | 02.1.3   | CAJA 2   | Configurar tsconfig.json estricto                            | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 96  | 02.1.4   | CAJA 2   | Configurar next.config.js                                    | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 97  | 02.1.5   | CAJA 2   | Configurar tailwind.config.ts                                | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 98  | 02.1.6   | CAJA 2   | Configurar postcss.config.js                                 | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 99  | 02.1.7   | CAJA 2   | Instalar dependencias                                        | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 100 | 02.1.8   | CAJA 2   | Verificar configuración inicial                              | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 101 | 02.2.1   | CAJA 2   | Crear .eslintrc.js                                           | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 102 | 02.2.2   | CAJA 2   | Crear .prettierrc                                            | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 103 | 02.2.3   | CAJA 2   | Crear .prettierignore                                        | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 104 | 02.2.4   | CAJA 2   | Crear .editorconfig                                          | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 105 | 02.2.5   | CAJA 2   | Instalar dependencias de linting                             | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
-| 106 | 02.2.6   | CAJA 2   | Verificar linting                                            | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
+| 93  | 02.1.1   | CAJA 2   | Inicializar proyecto Next.js                                 | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 94  | 02.1.2   | CAJA 2   | Configurar package.json completo                             | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 95  | 02.1.3   | CAJA 2   | Configurar tsconfig.json estricto                            | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 96  | 02.1.4   | CAJA 2   | Configurar next.config.js                                    | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 97  | 02.1.5   | CAJA 2   | Configurar tailwind.config.ts                                | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 98  | 02.1.6   | CAJA 2   | Configurar postcss.config.js                                 | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 99  | 02.1.7   | CAJA 2   | Instalar dependencias                                        | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 100 | 02.1.8   | CAJA 2   | Verificar configuración inicial                              | SUBCAJA 02.1  | Configuración del Proyecto           | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 101 | 02.2.1   | CAJA 2   | Crear .eslintrc.js                                           | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 102 | 02.2.2   | CAJA 2   | Crear .prettierrc                                            | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 103 | 02.2.3   | CAJA 2   | Crear .prettierignore                                        | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 104 | 02.2.4   | CAJA 2   | Crear .editorconfig                                          | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 105 | 02.2.5   | CAJA 2   | Instalar dependencias de linting                             | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 106 | 02.2.6   | CAJA 2   | Verificar linting                                            | SUBCAJA 02.2  | Linting y Formatting                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 107 | 02.3.1   | CAJA 2   | Instalar Husky y Lint-Staged                                 | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 108 | 02.3.2   | CAJA 2   | Inicializar Husky                                            | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |
 | 109 | 02.3.3   | CAJA 2   | Crear pre-commit hook                                        | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | \[ ]     |

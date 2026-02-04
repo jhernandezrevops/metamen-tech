@@ -1,10 +1,12 @@
 module.exports = {
   root: true,
+
   env: {
     browser: true,
     es2022: true,
     node: true,
   },
+
   extends: [
     'next/core-web-vitals',
     'plugin:@typescript-eslint/strict',
@@ -12,7 +14,9 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
+
   parser: '@typescript-eslint/parser',
+
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -21,10 +25,9 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: [
-    '@typescript-eslint',
-    'import',
-  ],
+
+  plugins: ['@typescript-eslint', 'import'],
+
   settings: {
     'import/resolver': {
       typescript: {
@@ -32,96 +35,208 @@ module.exports = {
       },
     },
   },
+
   rules: {
+    // ========================================
+    // TypeScript Estricto
+    // ========================================
+
+    // Prohibir 'any' explícito
     '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/explicit-function-return-type': ['warn', {
-      allowExpressions: true,
-      allowTypedFunctionExpressions: true,
-      allowHigherOrderFunctions: true,
-    }],
+
+    // Requerir tipos de retorno explícitos en funciones exportadas
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+        allowTypedFunctionExpressions: true,
+        allowHigherOrderFunctions: true,
+      },
+    ],
+
+    // Requerir tipos de retorno en métodos de módulo
     '@typescript-eslint/explicit-module-boundary-types': 'warn',
-    '@typescript-eslint/no-unused-vars': ['error', {
-      argsIgnorePattern: '^_',
-      varsIgnorePattern: '^_',
-      caughtErrorsIgnorePattern: '^_',
-    }],
-    '@typescript-eslint/strict-boolean-expressions': ['error', {
-      allowString: false,
-      allowNumber: false,
-      allowNullableObject: true,
-      allowNullableBoolean: true,
-      allowNullableString: false,
-      allowNullableNumber: false,
-      allowAny: false,
-    }],
+
+    // No variables sin usar (excepto las que empiezan con _)
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+      },
+    ],
+
+    // Expresiones booleanas estrictas
+    '@typescript-eslint/strict-boolean-expressions': [
+      'error',
+      {
+        allowString: false,
+        allowNumber: false,
+        allowNullableObject: true,
+        allowNullableBoolean: true,
+        allowNullableString: false,
+        allowNullableNumber: false,
+        allowAny: false,
+      },
+    ],
+
+    // No promesas flotantes
     '@typescript-eslint/no-floating-promises': 'error',
+
+    // Await solo en thenables
     '@typescript-eslint/await-thenable': 'error',
-    '@typescript-eslint/no-misused-promises': ['error', {
-      checksVoidReturn: {
-        arguments: false,
-        attributes: false,
+
+    // No mal uso de promesas
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: {
+          arguments: false,
+          attributes: false,
+        },
       },
-    }],
+    ],
+
+    // Preferir nullish coalescing
     '@typescript-eslint/prefer-nullish-coalescing': 'error',
+
+    // Preferir optional chaining
     '@typescript-eslint/prefer-optional-chain': 'error',
+
+    // No non-null assertion innecesaria
     '@typescript-eslint/no-unnecessary-condition': 'warn',
+
+    // Consistencia en type vs interface
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-    '@typescript-eslint/consistent-type-imports': ['error', {
-      prefer: 'type-imports',
-      disallowTypeAnnotations: true,
-    }],
-    'react-hooks/exhaustive-deps': 'error',
-    'react/jsx-no-leaked-render': ['error', {
-      validStrategies: ['ternary', 'coerce'],
-    }],
-    'react/react-in-jsx-scope': 'off',
-    'import/order': ['error', {
-      groups: [
-        'builtin',
-        'external',
-        'internal',
-        ['parent', 'sibling'],
-        'index',
-        'type',
-      ],
-      'newlines-between': 'always',
-      alphabetize: {
-        order: 'asc',
-        caseInsensitive: true,
+
+    // Importar tipos como type imports
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+        disallowTypeAnnotations: true,
       },
-      pathGroups: [
-        {
-          pattern: 'react',
-          group: 'external',
-          position: 'before',
+    ],
+
+    // ========================================
+    // React
+    // ========================================
+
+    // Dependencias de useEffect completas
+    'react-hooks/exhaustive-deps': 'error',
+
+    // No renderizado con leak
+    'react/jsx-no-leaked-render': [
+      'error',
+      {
+        validStrategies: ['ternary', 'coerce'],
+      },
+    ],
+
+    // Sin React en scope (Next.js lo inyecta)
+    'react/react-in-jsx-scope': 'off',
+
+    // Props en orden alfabético (opcional pero ordenado)
+    'react/jsx-sort-props': [
+      'warn',
+      {
+        callbacksLast: true,
+        shorthandFirst: true,
+        ignoreCase: true,
+        reservedFirst: true,
+      },
+    ],
+
+    // ========================================
+    // Imports
+    // ========================================
+
+    // Orden de imports
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin', // Node builtins (fs, path)
+          'external', // npm packages
+          'internal', // @ alias imports
+          ['parent', 'sibling'], // relative imports
+          'index',
+          'type', // type imports last
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
         },
-        {
-          pattern: 'next/**',
-          group: 'external',
-          position: 'before',
-        },
-        {
-          pattern: '@/**',
-          group: 'internal',
-          position: 'before',
-        },
-      ],
-      pathGroupsExcludedImportTypes: ['react', 'next'],
-    }],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: 'next/**',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'internal',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react', 'next'],
+      },
+    ],
+
+    // No imports duplicados
     'import/no-duplicates': 'error',
+
+    // ========================================
+    // Seguridad
+    // ========================================
+
+    // Prohibir eval
     'no-eval': 'error',
+
+    // Prohibir implied eval
     'no-implied-eval': 'error',
+
+    // Prohibir new Function
     'no-new-func': 'error',
+
+    // ========================================
+    // Estilo General
+    // ========================================
+
+    // Preferir const sobre let
     'prefer-const': 'error',
+
+    // No var
     'no-var': 'error',
+
+    // Preferir template literals
     'prefer-template': 'error',
-    'eqeqeq': ['error', 'always', { null: 'ignore' }],
-    'no-console': ['warn', {
-      allow: ['warn', 'error', 'info']
-    }],
+
+    // Usar === en lugar de ==
+    eqeqeq: ['error', 'always', { null: 'ignore' }],
+
+    // No console en producción
+    'no-console': [
+      'warn',
+      {
+        allow: ['warn', 'error', 'info'],
+      },
+    ],
+
+    // No debugger
     'no-debugger': 'error',
   },
+
+  // Overrides para archivos específicos
   overrides: [
+    // Tests pueden usar any
     {
       files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts'],
       rules: {
@@ -129,19 +244,24 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 'off',
       },
     },
+    // Scripts pueden usar console
     {
       files: ['scripts/**/*.ts'],
       rules: {
         'no-console': 'off',
       },
     },
+    // Config files son CommonJS
     {
-      files: ['*.config.js', '*.config.ts'],
+      files: ['*.config.js', '*.config.ts', '.eslintrc.js'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-require-imports': 'off',
       },
     },
   ],
+
+  // Archivos a ignorar
   ignorePatterns: [
     'node_modules/',
     '.next/',
