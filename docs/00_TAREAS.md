@@ -113,12 +113,12 @@
 | 111 | 02.3.5   | CAJA 2   | Crear lint-staged.config.js                                  | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 112 | 02.3.6   | CAJA 2   | Verificar hooks                                              | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 113 | 02.3.7   | CAJA 2   | Configurar Commitlint                                        | SUBCAJA 02.3  | Git Hooks                            | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
-| 114 | 02.4.1   | CAJA 2   | Crear directorio .github/workflows                           | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [/]      |
-| 115 | 02.4.2   | CAJA 2   | Crear ci.yml                                                 | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [/]      |
-| 116 | 02.4.3   | CAJA 2   | Crear preview\.yml                                           | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [/]      |
-| 117 | 02.4.4   | CAJA 2   | Crear production.yml                                         | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [/]      |
-| 118 | 02.4.5   | CAJA 2   | Crear dependabot.yml                                         | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [/]      |
-| 119 | 02.4.6   | CAJA 2   | Crear CODEOWNERS                                             | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [/]      |
+| 114 | 02.4.1   | CAJA 2   | Crear directorio .github/workflows                           | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 115 | 02.4.2   | CAJA 2   | Crear ci.yml                                                 | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 116 | 02.4.3   | CAJA 2   | Crear preview\.yml                                           | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 117 | 02.4.4   | CAJA 2   | Crear production.yml                                         | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 118 | 02.4.5   | CAJA 2   | Crear dependabot.yml                                         | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
+| 119 | 02.4.6   | CAJA 2   | Crear CODEOWNERS                                             | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 120 | 02.4.7   | CAJA 2   | Configurar secrets en GitHub                                 | SUBCAJA 02.4  | CI/CD Pipeline                       | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 121 | 02.5.1   | CAJA 2   | Crear .env.example                                           | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
 | 122 | 02.5.2   | CAJA 2   | Crear .env.local desde template                              | SUBCAJA 02.5  | Variables de Entorno                 | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
