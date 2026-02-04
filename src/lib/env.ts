@@ -84,7 +84,18 @@ export type ClientEnv = z.infer<typeof clientEnvSchema>;
  * Solo llamar en código del servidor (Server Components, API Routes, Server Actions)
  */
 function validateServerEnv(): ServerEnv {
-  const parsed = serverEnvSchema.safeParse(process.env);
+  const parsed = serverEnvSchema.safeParse({
+    SUPABASE_SERVICE_ROLE_KEY: process.env['SUPABASE_SERVICE_ROLE_KEY'],
+    DATABASE_URL: process.env['DATABASE_URL'],
+    STRIPE_SECRET_KEY: process.env['STRIPE_SECRET_KEY'],
+    STRIPE_WEBHOOK_SECRET: process.env['STRIPE_WEBHOOK_SECRET'],
+    STRIPE_PRICE_MONTHLY: process.env['STRIPE_PRICE_MONTHLY'],
+    STRIPE_PRICE_YEARLY: process.env['STRIPE_PRICE_YEARLY'],
+    REPLICATE_API_TOKEN: process.env['REPLICATE_API_TOKEN'],
+    NODE_ENV: process.env['NODE_ENV'],
+    UPSTASH_REDIS_REST_URL: process.env['UPSTASH_REDIS_REST_URL'],
+    UPSTASH_REDIS_REST_TOKEN: process.env['UPSTASH_REDIS_REST_TOKEN'],
+  });
 
   if (!parsed.success) {
     console.error('❌ Invalid server environment variables:');
@@ -101,16 +112,16 @@ function validateServerEnv(): ServerEnv {
  */
 function validateClientEnv(): ClientEnv {
   const clientEnv = {
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
-    NEXT_PUBLIC_APP_VERSION: process.env.NEXT_PUBLIC_APP_VERSION,
-    NEXT_PUBLIC_ENABLE_ANALYTICS: process.env.NEXT_PUBLIC_ENABLE_ANALYTICS,
-    NEXT_PUBLIC_ENABLE_SENTRY: process.env.NEXT_PUBLIC_ENABLE_SENTRY,
-    NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
-    NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
-    NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+    NEXT_PUBLIC_SUPABASE_URL: process.env['NEXT_PUBLIC_SUPABASE_URL'],
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env['NEXT_PUBLIC_SUPABASE_ANON_KEY'],
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env['NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY'],
+    NEXT_PUBLIC_APP_URL: process.env['NEXT_PUBLIC_APP_URL'],
+    NEXT_PUBLIC_APP_VERSION: process.env['NEXT_PUBLIC_APP_VERSION'],
+    NEXT_PUBLIC_ENABLE_ANALYTICS: process.env['NEXT_PUBLIC_ENABLE_ANALYTICS'],
+    NEXT_PUBLIC_ENABLE_SENTRY: process.env['NEXT_PUBLIC_ENABLE_SENTRY'],
+    NEXT_PUBLIC_SENTRY_DSN: process.env['NEXT_PUBLIC_SENTRY_DSN'],
+    NEXT_PUBLIC_POSTHOG_KEY: process.env['NEXT_PUBLIC_POSTHOG_KEY'],
+    NEXT_PUBLIC_POSTHOG_HOST: process.env['NEXT_PUBLIC_POSTHOG_HOST'],
   };
 
   const parsed = clientEnvSchema.safeParse(clientEnv);

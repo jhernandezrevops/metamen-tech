@@ -82,7 +82,7 @@ const nextConfig = {
       fullUrl: true,
     },
   },
-  output: 'standalone',
+  // output: 'standalone',
   poweredByHeader: false,
 };
 
