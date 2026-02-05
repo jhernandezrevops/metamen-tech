@@ -1,19 +1,12 @@
 // scripts/seed.ts
-/* eslint-disable no-console */
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
 
 // Cargar variables de entorno
 config({ path: '.env.local' });
 
-const supabaseUrl = process.env['NEXT_PUBLIC_SUPABASE_URL'];
-const supabaseServiceKey = process.env['SUPABASE_SERVICE_ROLE_KEY'];
-
-// Validación simple
-if (typeof supabaseUrl !== 'string' || typeof supabaseServiceKey !== 'string') {
-  console.error('❌ Error: Missing SUPABASE environment variables in .env.local');
-  process.exit(1);
-}
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey, {
   auth: {
@@ -22,13 +15,9 @@ const supabase = createClient(supabaseUrl, supabaseServiceKey, {
   },
 });
 
-async function seedStoreItems(): Promise<void> {
+async function seedStoreItems() {
   console.log('🌱 Seeding store items...');
-  console.log('Using Supabase client:', supabase); // Force usage
 
-  // TODO: Estos items son placeholders.
-  // La tabla store_items SE CREARÁ EN CAJA 3.
-  // Este script fallará si se corre antes de las migraciones de Caja 3.
   const storeItems = [
     // Armadura - Nivel 1-2
     {
@@ -38,35 +27,175 @@ async function seedStoreItems(): Promise<void> {
       rarity: 'common',
       price_btc: 0,
       level_required: 1,
-      prompt_tokens: 'wearing torn dirty clothes, ragged outfit',
+      vector_effects: null,
+      duration_days: null,
     },
-    // ... más items placeholder
+    // Boosters
+    {
+      name: 'Proteína de Emergencia',
+      description: '+20% PHYSIQUE por 24h',
+      category: 'booster',
+      rarity: 'common',
+      price_btc: 50,
+      level_required: 1,
+      vector_effects: { PHYSIQUE: 20 },
+      duration_days: 1,
+    },
+    {
+      name: 'Café de Desarrollador',
+      description: '+15% WEALTH por 12h',
+      category: 'booster',
+      rarity: 'common',
+      price_btc: 30,
+      level_required: 1,
+      vector_effects: { WEALTH: 15 },
+      duration_days: 1,
+    },
+    {
+      name: 'Meditación Guiada Premium',
+      description: '+25% AURA por 24h',
+      category: 'booster',
+      rarity: 'uncommon',
+      price_btc: 100,
+      level_required: 3,
+      vector_effects: { AURA: 25 },
+      duration_days: 1,
+    },
+    // Cosméticos
+    {
+      name: 'Tatuaje Dorado',
+      description: 'Marcas de guerra brillantes',
+      category: 'cosmetic',
+      rarity: 'rare',
+      price_btc: 500,
+      level_required: 5,
+      vector_effects: null,
+      duration_days: null,
+    },
+    {
+      name: 'Aura de Campeón',
+      description: 'Resplandor dorado permanente',
+      category: 'cosmetic',
+      rarity: 'epic',
+      price_btc: 2000,
+      level_required: 10,
+      vector_effects: null,
+      duration_days: null,
+    },
   ];
 
-  /*
-  // COMENTADO HASTA QUE EXISTA LA TABLA EN CAJA 3
-  const { error } = await supabase.from('store_items').upsert(storeItems);
-
-  if (error) {
-    console.error('Error seeding store items:', error);
-    process.exit(1);
+  for (const item of storeItems) {
+    const { error } = await supabase.from('store_items').insert(item);
+    if (error) {
+      console.error(`Error inserting ${item.name}:`, error);
+    } else {
+      console.log(`✅ Inserted: ${item.name}`);
+    }
   }
-  */
 
-  console.log(`⚠️ Tabla 'store_items' no existe aún (Caja 3). Skipping insert.`);
-  console.log(`✅ Seeded ${storeItems.length} store items (simulation)`);
+  console.log('✅ Store items seeded successfully');
 }
 
-async function main(): Promise<void> {
+async function seedDailyTasks() {
+  console.log('🌱 Seeding daily tasks...');
+
+  const tasks = [
+    // WEALTH
+    {
+      title: 'Completar 3 tareas prioritarias',
+      description: 'Termina tus 3 tareas más importantes del día',
+      category: 'WEALTH',
+      btc_reward: 10,
+      vector_impact: { WEALTH: 5 },
+      is_custom: false,
+    },
+    {
+      title: 'Trabajo Profundo 90 min',
+      description: '90 minutos de focus sin distracciones',
+      category: 'WEALTH',
+      btc_reward: 15,
+      vector_impact: { WEALTH: 8 },
+      is_custom: false,
+    },
+    // PHYSIQUE
+    {
+      title: 'Entrenamiento de Fuerza',
+      description: '45 minutos de levantamiento de pesas',
+      category: 'PHYSIQUE',
+      btc_reward: 15,
+      vector_impact: { PHYSIQUE: 10 },
+      is_custom: false,
+    },
+    {
+      title: 'Cardio 30 min',
+      description: 'Correr, nadar o bicicleta',
+      category: 'PHYSIQUE',
+      btc_reward: 10,
+      vector_impact: { PHYSIQUE: 6 },
+      is_custom: false,
+    },
+    // AURA
+    {
+      title: 'Meditación 20 min',
+      description: 'Meditación guiada o mindfulness',
+      category: 'AURA',
+      btc_reward: 10,
+      vector_impact: { AURA: 8 },
+      is_custom: false,
+    },
+    {
+      title: 'Lectura 30 min',
+      description: 'Leer libro de desarrollo personal',
+      category: 'AURA',
+      btc_reward: 8,
+      vector_impact: { AURA: 5 },
+      is_custom: false,
+    },
+    // JAWLINE
+    {
+      title: 'Práctica de Comunicación',
+      description: 'Grabar 5 minutos de discurso',
+      category: 'JAWLINE',
+      btc_reward: 8,
+      vector_impact: { JAWLINE: 5 },
+      is_custom: false,
+    },
+    // ENV
+    {
+      title: 'Limpieza del Espacio',
+      description: 'Organizar y limpiar tu espacio de trabajo',
+      category: 'ENV',
+      btc_reward: 8,
+      vector_impact: { ENV: 5 },
+      is_custom: false,
+    },
+  ];
+
+  for (const task of tasks) {
+    const { error } = await supabase.from('daily_tasks').insert(task);
+    if (error) {
+      console.error(`Error inserting task ${task.title}:`, error);
+    } else {
+      console.log(`✅ Inserted task: ${task.title}`);
+    }
+  }
+
+  console.log('✅ Daily tasks seeded successfully');
+}
+
+async function main() {
   console.log('🚀 Starting database seed...\n');
 
-  await seedStoreItems();
-
-  console.log('\n✨ Seed completed successfully!');
-  process.exit(0);
+  try {
+    await seedStoreItems();
+    console.log('');
+    await seedDailyTasks();
+    console.log('\n✅ Database seeded successfully!');
+    process.exit(0);
+  } catch (error) {
+    console.error('❌ Error seeding database:', error);
+    process.exit(1);
+  }
 }
 
-main().catch((error: unknown) => {
-  console.error('Seed failed:', error);
-  process.exit(1);
-});
+main();

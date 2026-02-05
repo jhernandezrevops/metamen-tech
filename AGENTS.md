@@ -40,15 +40,17 @@ METAMEN100 es un **Sistema Operativo de Conducta y espejo bio-digital de alto re
 
 | Capa | Tecnología | Versión |
 |------|------------|---------|
-| **Framework** | Next.js | 14.2+ |
-| **Frontend** | React | 18.3+ |
-| **Lenguaje** | TypeScript | 5.4+ |
+| **Framework** | Next.js | 14.2.5 |
+| **Frontend** | React | 18.3.1 |
+| **Lenguaje** | TypeScript | 5.4.5 |
 | **Base de Datos** | PostgreSQL (Supabase) | 15+ |
-| **ORM** | Prisma | 6.x |
-| **Estilos** | Tailwind CSS | 3.4+ |
-| **Animaciones** | Framer Motion | 11+ |
-| **Estado** | Zustand | 4.5+ |
-| **Forms** | React Hook Form + Zod | 7+ / 3+ |
+| **Estilos** | Tailwind CSS | 3.4.4 |
+| **Animaciones** | Framer Motion | 11.2.0 |
+| **Estado** | Zustand | 4.5.2 |
+| **Forms** | React Hook Form + Zod | 7.52.0 / 3.25.76 |
+| **UI Components** | shadcn/ui | latest |
+| **Icons** | Lucide React | 0.396.0 |
+| **Charts** | Recharts | 2.12.0 |
 
 ### 2.2 Servicios Externos
 
@@ -57,8 +59,6 @@ METAMEN100 es un **Sistema Operativo de Conducta y espejo bio-digital de alto re
 | **Supabase** | Auth, Database, Realtime, Storage |
 | **Stripe** | Procesamiento de pagos y suscripciones |
 | **Replicate/Gemini** | Generación de imágenes de avatar (IA) |
-| **Inngest** | Queue, cron jobs, scheduling |
-| **Resend** | Envío de emails |
 | **Cloudflare R2** | Almacenamiento de imágenes de avatar |
 
 ### 2.3 Testing
@@ -74,7 +74,7 @@ METAMEN100 es un **Sistema Operativo de Conducta y espejo bio-digital de alto re
 
 ## 3. Estructura del Proyecto
 
-### 3.1 Layout de Carpetas (Planificado)
+### 3.1 Layout de Carpetas
 
 ```
 metamen100/
@@ -88,7 +88,8 @@ metamen100/
 │
 ├── .husky/
 │   ├── pre-commit
-│   └── pre-push
+│   ├── pre-push
+│   └── commit-msg
 │
 ├── .vscode/
 │   ├── settings.json
@@ -151,49 +152,49 @@ metamen100/
 │   │   ├── layout.tsx            # Root layout
 │   │   └── page.tsx              # Landing page
 │   │
+│   ├── actions/                  # Server Actions
+│   │   ├── auth/                 # Acciones de autenticación
+│   │   ├── tasks/                # Gestión de tareas
+│   │   ├── store/                # Tienda
+│   │   └── ...                   # Agrupado por dominio
+│   │
 │   ├── components/               # Componentes React
 │   │   ├── ui/                   # Componentes base (shadcn/ui)
 │   │   ├── forms/                # Formularios reutilizables
-│   │   ├── avatar/               # Componentes del avatar
+│   │   ├── auth/                 # Componentes de auth
+│   │   ├── dashboard/            # Componentes del dashboard
 │   │   ├── tasks/                # Componentes de tareas
 │   │   ├── store/                # Componentes de tienda
 │   │   └── layout/               # Layout components
 │   │
 │   ├── lib/                      # Utilidades y lógica
 │   │   ├── core/                 # Lógica de negocio pura
-│   │   ├── server/               # Server Actions
-│   │   │   ├── auth/
-│   │   │   ├── tasks/
-│   │   │   ├── store/
-│   │   │   ├── wallet/
-│   │   │   └── profile/
-│   │   ├── supabase/             # Cliente Supabase
-│   │   ├── prisma/               # Cliente Prisma
-│   │   └── utils/                # Utilidades generales
+│   │   ├── supabase/             # Clientes de base de datos
+│   │   ├── stripe/               # Integración Stripe
+│   │   ├── replicate/            # Integración Replicate
+│   │   ├── validations/          # Schemas de Zod
+│   │   ├── utils/                # Helpers genéricos
+│   │   └── env.ts                # Validación de env vars
 │   │
 │   ├── hooks/                    # Custom React hooks
 │   │
 │   ├── stores/                   # Zustand stores
-│   │   ├── useAvatarStore.ts
-│   │   ├── useTaskStore.ts
-│   │   ├── useWalletStore.ts
-│   │   └── useUIStore.ts
+│   │   ├── user-store.ts
+│   │   └── ui-store.ts
 │   │
 │   ├── types/                    # Tipos TypeScript
-│   │   ├── database.types.ts     # Tipos de Supabase
-│   │   ├── api.types.ts
-│   │   └── index.ts
+│   │   ├── database.types.ts     # Tipos generados de Supabase
+│   │   ├── domain.ts             # Tipos de dominio
+│   │   ├── api.ts                # Tipos de API responses
+│   │   └── index.ts              # Barrel export
+│   │
+│   ├── tests/                    # Tests
+│   │   ├── unit/                 # Tests unitarios
+│   │   ├── integration/          # Tests de integración
+│   │   └── e2e/                  # Tests E2E (Playwright)
 │   │
 │   └── styles/                   # Estilos globales
-│       └── globals.css
-│
-├── prisma/
-│   └── schema.prisma             # Schema de base de datos
-│
-├── tests/
-│   ├── unit/
-│   ├── integration/
-│   └── e2e/
+│       └── fonts.ts              # Configuración de fonts
 │
 ├── package.json
 ├── tsconfig.json
@@ -203,7 +204,11 @@ metamen100/
 ├── vitest.config.ts
 ├── playwright.config.ts
 ├── eslint.config.js
-├── prettier.config.js
+├── .eslintrc.js
+├── .prettierrc
+├── .editorconfig
+├── commitlint.config.js
+├── lint-staged.config.js
 └── .env.local                    # Variables de entorno (no commitear)
 ```
 
@@ -212,7 +217,7 @@ metamen100/
 ```yaml
 # Archivos y Carpetas
 Componentes React:        PascalCase     (ej: AvatarDisplay.tsx)
-Hooks personalizados:     camelCase      (ej: useAvatarStore.ts)
+Hooks personalizados:     camelCase      (ej: useAvatarState.ts)
 Utilidades:               camelCase      (ej: formatDate.ts)
 Server Actions:           camelCase      (ej: completeTask.ts)
 
@@ -302,7 +307,7 @@ Clean Code:
 
 TypeScript:
   - Tipado explícito en funciones públicas
-  - No usar 'any'
+  - No usar 'any' explícito (regla ESLint: error)
   - Interfaces preferidas sobre types para objetos
   - Enums para valores discretos
 
@@ -341,7 +346,7 @@ export function AvatarDisplay({
   userId, 
   size = 'md', 
   showLevel = true 
-}: AvatarDisplayProps) {
+}: AvatarDisplayProps): JSX.Element {
   // 4. Hooks
   const { avatar, isLoading } = useAvatarStore()
   
@@ -383,18 +388,18 @@ El proyecto usa una metodología de desarrollo basada en "**cajas**" (milestones
 |------|--------|--------|-------------|
 | **00** | Setup Inicial | ✅ | Configuración inicial del proyecto |
 | **01** | Documentación | ✅ | Toda la documentación del sistema |
-| **02** | Infraestructura | 🔄 | Configuración técnica base |
-| **03** | Autenticación | ⏳ | Sistema de login/registro |
-| **04** | Onboarding | ⏳ | Flujo de bienvenida y configuración |
-| **05** | Dashboard | ⏳ | Panel principal del usuario |
-| **06** | Sistema de Tareas | ⏳ | Gestión de tareas diarias |
-| **07** | Sistema de Vectores | ⏳ | Cálculo y visualización de vectores |
-| **08** | Economía (Wallet) | ⏳ | Sistema de BTC y transacciones |
-| **09** | Tienda | ⏳ | Catálogo y compras |
-| **10** | Arsenal de Herramientas | ⏳ | 9 herramientas integradas |
+| **02** | Infraestructura | ✅ | Configuración técnica base |
+| **03** | Base de Datos | ✅ | Schema, RLS, funciones Postgres |
+| **04** | Sistema de Vectores | 🔄 | Lógica de negocio core (lib/core) |
+| **05** | UI/UX | ⏳ | Componentes base, landing, auth UI |
+| **06** | Dashboard | ⏳ | Panel principal del usuario |
+| **07** | Arsenal de Herramientas | ⏳ | 9 herramientas integradas |
+| **08** | Generación de Avatar | ⏳ | Integración con IA |
+| **09** | Economía y Tienda | ⏳ | Sistema de BTC, tienda, inventario |
+| **10** | Suscripciones | ⏳ | Stripe, planes, billing |
 | **11** | Sistema de Juicio | ⏳ | Judgement Night y salud |
-| **12** | Generación de Avatar | ⏳ | Integración con IA |
-| **13** | Perfil y Ajustes | ⏳ | Configuración de usuario |
+| **12** | Perfil y Ajustes | ⏳ | Configuración de usuario |
+| **13** | Polish y Launch | ⏳ | Optimizaciones, testing, deploy |
 
 ### 6.3 Convención de Versionado
 
@@ -433,10 +438,8 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 SUPABASE_PROJECT_ID=
 
-# Database URL para Prisma (connection pooling)
+# Database URL para migraciones
 DATABASE_URL=
-# Direct URL para migraciones (sin pooling)
-DIRECT_URL=
 
 # ============================================
 # STRIPE
@@ -444,6 +447,8 @@ DIRECT_URL=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
+STRIPE_PRICE_MONTHLY=
+STRIPE_PRICE_YEARLY=
 
 # ============================================
 # REPLICATE (AI Image Generation)
@@ -454,19 +459,57 @@ REPLICATE_API_TOKEN=
 # APP CONFIG
 # ============================================
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_APP_NAME=METAMEN100
+NEXT_PUBLIC_APP_VERSION=0.1.0
+NODE_ENV=development
 
 # ============================================
-# DEVELOPMENT ONLY
+# FEATURE FLAGS
 # ============================================
-NODE_ENV=development
+NEXT_PUBLIC_ENABLE_ANALYTICS=false
+NEXT_PUBLIC_ENABLE_SENTRY=false
 ```
 
 ---
 
-## 8. Seguridad
+## 8. Git Hooks y Convenciones de Commit
 
-### 8.1 Principios de Seguridad
+### 8.1 Git Hooks Configurados
+
+| Hook | Descripción |
+|------|-------------|
+| **pre-commit** | Ejecuta lint-staged (ESLint + Prettier), detecta console.log |
+| **pre-push** | Ejecuta type-check (tests unitarios comentados por ahora) |
+| **commit-msg** | Valida mensajes de commit con commitlint |
+
+### 8.2 Convención de Commits (Conventional Commits)
+
+```
+Formato: <tipo>(<alcance>): <descripción>
+
+Tipos permitidos:
+- feat:     Nueva feature
+- fix:      Bug fix
+- docs:     Documentación
+- style:    Formato, no afecta código
+- refactor: Refactoring
+- perf:     Performance
+- test:     Tests
+- build:    Build system
+- ci:       CI/CD
+- chore:    Mantenimiento
+- revert:   Revert
+
+Ejemplos:
+feat(auth): implementar login con google
+fix(vectors): corregir cálculo de decay
+docs(readme): actualizar instrucciones de setup
+```
+
+---
+
+## 9. Seguridad
+
+### 9.1 Principios de Seguridad
 
 - **Security by Design:** Seguridad integrada desde el diseño
 - **Zero Trust Architecture:** Nunca confiar, siempre verificar
@@ -474,7 +517,7 @@ NODE_ENV=development
 - **No hay DELETE físico:** Solo soft delete (status/archived)
 - **Validación en capas:** Frontend → API → Base de datos
 
-### 8.2 Checklist de Seguridad
+### 9.2 Checklist de Seguridad
 
 ```yaml
 Autenticación:
@@ -502,11 +545,19 @@ Frontend:
   - No exponer secrets en cliente
 ```
 
+### 9.3 Headers de Seguridad (Configurados en next.config.js)
+
+- `Strict-Transport-Security`: HSTS con preload
+- `X-Frame-Options`: SAMEORIGIN
+- `X-Content-Type-Options`: nosniff
+- `Referrer-Policy`: strict-origin-when-cross-origin
+- `Permissions-Policy`: Restricciones de APIs del navegador
+
 ---
 
-## 9. Testing
+## 10. Testing
 
-### 9.1 Estrategia de Testing
+### 10.1 Estrategia de Testing
 
 ```
 Pirámide de Testing:
@@ -526,7 +577,7 @@ Pirámide de Testing:
         ╱─────────────────────────╲
 ```
 
-### 9.2 Objetivos de Cobertura
+### 10.2 Objetivos de Cobertura
 
 | Tipo | Cobertura Mínima |
 |------|------------------|
@@ -535,7 +586,7 @@ Pirámide de Testing:
 | E2E Critical Paths | 100% |
 | API Tests | 100% |
 
-### 9.3 Métricas de Calidad
+### 10.3 Métricas de Calidad
 
 - Bugs críticos en producción: **0**
 - Bugs mayores en producción: **≤ 2/mes**
@@ -545,9 +596,9 @@ Pirámide de Testing:
 
 ---
 
-## 10. Recursos Clave
+## 11. Recursos Clave
 
-### 10.1 Documentación Interna (obligatoria leer)
+### 11.1 Documentación Interna (obligatoria leer)
 
 | Documento | Propósito |
 |-----------|-----------|
@@ -563,24 +614,24 @@ Pirámide de Testing:
 | `docs/08_Test_Plan.md` | Estrategia de testing |
 | `docs/09_SECURITY_SPEC.md` | Especificación de seguridad |
 
-### 10.2 Enlaces Útiles
+### 11.2 Enlaces Útiles
 
-- **Stack:** Next.js 14, React 18, TypeScript 5, Tailwind 3, Supabase, Prisma
-- **Design System:** Mobile-first, Dark theme (#0A0A0A), Acentos dorados
+- **Stack:** Next.js 14, React 18, TypeScript 5, Tailwind 3, Supabase
+- **Design System:** Mobile-first, Dark theme (#0A0A0B), Acentos dorados
 - **Target:** Hombres 20-35 años, México/LATAM/España
 
 ---
 
-## 11. Contacto y Decisiones
+## 12. Contacto y Decisiones
 
-### 11.1 Antes de Cualquier Cambio
+### 12.1 Antes de Cualquier Cambio
 
 Siempre consultar:
 1. ¿Está documentado en `/docs/`?
 2. ¿A qué caja pertenece esta funcionalidad?
 3. ¿Hay ADR relacionado con esta decisión técnica?
 
-### 11.2 Flujo de Trabajo Recomendado
+### 12.2 Flujo de Trabajo Recomendado
 
 ```
 1. Leer AGENTS.md (este archivo)

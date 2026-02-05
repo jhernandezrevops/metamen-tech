@@ -1,0 +1,44 @@
+name: auditoria_bloque
+description: Ejecuta una auditoría profunda de un bloque de tareas para verificar cumplimiento de reglas y funcionalidad.
+triggers:
+  - description: Cuando el usuario quiere verificar un grupo de tareas completadas.
+    user_commands: ["auditar bloque", "revisar tareas", "qa check"]
+
+steps:
+  - id: cargar_reglas
+    description: Cargar la constitución del proyecto.
+    action: read_file
+    files: ["docs/00_RULES.md"]
+
+  - id: solicitar_bloque
+    description: Solicitar al usuario el bloque de tareas a auditar.
+    action: user_input
+    prompt: "Por favor, pega el bloque de tareas a auditar (Formato: No_CAJA | ID_TAREA | DESCRIPCION)."
+
+  - id: ejecucion_auditoria
+    description: El auditor procesa las tareas contra las especificaciones.
+    uses: skills/auditor_calidad.md
+    input: 
+      tasks_block: ${solicitar_bloque.response}
+    instruction: |
+      Utilizando el bloque de tareas proporcionado por el usuario:
+      1. Analiza `docs/00_RULES.md` para establecer el estándar de calidad.
+      2. Para cada tarea en el bloque, ejecuta la skill "auditor_calidad". "\.agent\skills\auditor_calidad.md"
+      3. Verifica rigurosamente existencia de archivos, sintaxis y lógica.
+      4. Genera el informe consolidado final.
+
+  - id: reporte_final
+    description: Entrega del informe de auditoría.
+    action: generate_text
+    instruction: |
+      Presenta el informe final generado en el paso anterior siguiendo estrictamente el formato de "Informe de Auditoría" definido en la skill.
+
+  - id: control_versiones
+    description: Realizar commit y push si las pruebas pasan.
+    uses: skills/ingenieria_software.md
+    instruction: |
+      Si la validación anterior (paso 5) fue exitosa (exit code 0):
+      1. Ejecuta: git add -A
+      2. Ejecuta: git commit -m "[CAJA-X.X.X] <tipo>: <descripción de la tarea>"
+      3. Ejecuta: git push origin
+      4. Genera el informe final: "Tarea [ID] completada exitosamente."

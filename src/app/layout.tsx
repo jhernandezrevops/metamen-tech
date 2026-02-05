@@ -1,20 +1,41 @@
+/**
+ * Root Layout
+ * 
+ * Layout raíz de la aplicación
+ */
+
 import type { Metadata } from 'next';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'METAMEN100 - Sistema Operativo de Conducta',
-  description:
-    'Espejo Bio-Digital de alto rendimiento para hombres. Transforma tu disciplina diaria en evolución visual inmediata.',
-  keywords: ['productividad', 'disciplina', 'desarrollo personal', 'gamificación', 'hábitos'],
-  authors: [{ name: 'METAMEN100' }],
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
-  themeColor: '#0A0A0B',
+  description: 'Espejo Bio-Digital de alto rendimiento para hombres. 100 días de transformación.',
+  metadataBase: new URL('https://metamen100.com'),
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="es">
-      <body className="antialiased">{children}</body>
+    <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <body className="font-sans antialiased bg-bg-primary text-text-primary">
+        {children}
+      </body>
     </html>
   );
 }

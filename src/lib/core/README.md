@@ -1,13 +1,18 @@
-# Core Domain Logic
+# Core Business Logic
 
-Este directorio contiene la lógica de negocio pura del Sistema Operativo de Conducta.
+Lógica de negocio PURA sin I/O:
 
-## Reglas
-1. **NO IMPORTAR** nada de `react`, `next`, o base de datos.
-2. Funciones puras y deterministas.
-3. 100% Testeable con Unit Tests.
+- `vectors.ts` - Cálculos de vectores (AURA, JAWLINE, WEALTH, PHYSIQUE, ENV)
+- `levels.ts` - Cálculos de niveles 1-10
+- `health.ts` - Lógica de salud (10 corazones)
+- `streak.ts` - Lógica de racha diaria
+- `judgement.ts` - Lógica de Judgement Night
+- `death.ts` - Lógica de muerte y resurrección
+- `economy.ts` - Cálculos de economía BTC
+- `validations.ts` - Validaciones de negocio
+- `constants.ts` - Constantes del sistema
 
-## Módulos
-- `vectors.ts`: Cálculos de AURA, JAWLINE, WEALTH, PHYSIQUE, ENV.
-- `levels.ts`: Sistema de niveles y XP.
-- `health.ts`: Lógica de corazones y muerte.
+## Principio
+
+Estos archivos deben ser funciones puras que no dependan de APIs externas,
+base de datos, o estado del cliente. Deben ser 100% testeables unitariamente.

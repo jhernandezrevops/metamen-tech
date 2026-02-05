@@ -27,6 +27,5 @@
 
     // Themes (opcional)
     "GitHub.github-vscode-theme"
-  ],
-  "unwantedRecommendations": []
+  ]
 }

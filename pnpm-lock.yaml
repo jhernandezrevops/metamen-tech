@@ -27,8 +27,8 @@ dependencies:
     specifier: ^3.1.0
     version: 3.2.0(date-fns@3.6.0)
   dotenv:
-    specifier: ^17.2.3
-    version: 17.2.3
+    specifier: ^16.4.5
+    version: 16.6.1
   framer-motion:
     specifier: ^11.2.0
     version: 11.18.2(react-dom@18.3.1)(react@18.3.1)
@@ -2875,8 +2875,8 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /dotenv@17.2.3:
-    resolution: {integrity: sha512-JVUnt+DUIzu87TABbhPmNfVdBDt18BLOWjMUFJMSi/Qqg7NTYtabbvSNJGOJ7afbRuv9D/lngizHtP7QyLQ+9w==}
+  /dotenv@16.6.1:
+    resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
     engines: {node: '>=12'}
     dev: false
 
