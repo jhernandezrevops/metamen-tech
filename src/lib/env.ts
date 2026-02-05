@@ -60,11 +60,11 @@ const clientEnvSchema = z.object({
   // Feature Flags
   NEXT_PUBLIC_ENABLE_ANALYTICS: z
     .string()
-    .transform((v) => v === 'true')
+    .transform((v: string) => v === 'true')
     .default('false'),
   NEXT_PUBLIC_ENABLE_SENTRY: z
     .string()
-    .transform((v) => v === 'true')
+    .transform((v: string) => v === 'true')
     .default('false'),
 
   // Observabilidad (opcional)

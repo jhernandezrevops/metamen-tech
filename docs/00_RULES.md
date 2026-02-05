@@ -1,5 +1,7 @@
 # Reglas No Negociables
 
+** TODA COMUNICACION , PENSAMIENTO PLANEACION Y EXPLICACION DE LOS PROCES DENTRO DE NUESTRAS INTERACIONES DEBERA SER ESTRICTAMENTE EN IDIOMA ESPAÑOL , ESTO NO ES NEGOCIABLE
+
 # ============================================
 # REGLA 1: CONTEXTO DEL PROYECTO
 # ============================================
@@ -12,12 +14,13 @@ rule: |
   2. Es un Sistema Operativo de Conducta de nivel TOP 100 Mundial
   3. La calidad debe ser quirúrgica, no aproximada
   4. Todo código debe seguir las especificaciones en /docs/ esto no es negociable
-  
+
   REGLAS NO NEGOCIABLES:
   1. NUNCA Inventar o incorporar mecanicas que no se encuentren en /docs/
   2. PROHIBIDO implementar alternativas sin consultar al usuario
   3. No avanzar a la siguiente tarea hasta completar la actual y recibir confirmacion del usuario
-  
+  4. Los problemas jamas debes de solucionarlos con "ignore" eso no corresponde a un sistema top 100 mundial
+
   Si el usuario no especifica una caja, pregunta:
   "¿Qué caja o de METAMEN100 estamos trabajando? (01-13)"
 
@@ -37,7 +40,7 @@ rule: |
   - Testing: Vitest + Playwright
   - Pagos: Stripe
   - IA: Replicate API / Gemini 3 Pro Image
-  
+
   PROHIBIDO sugerir alternativas sin consultar ADR-001 a ADR-013
 
 # ============================================
@@ -401,7 +404,7 @@ rule: |
   5. Seguir principios SOLID
   6. Tener JSDoc para funciones públicas
   7. Ser testeable (inyección de dependencias)
-  
+
   NUNCA:
   - Usar 'any' explícito
   - Dejar console.log en producción
@@ -416,7 +419,7 @@ description: "Todo código debe explicarse a sí mismo"
 
 rule: |
   Requerimientos de documentación:
-  
+
   1. JSDoc para funciones:
      ```typescript
      /**
@@ -427,7 +430,7 @@ rule: |
       * @throws TaskNotFoundError si la tarea no existe
       */
      ```
-  
+
   2. Comentarios explicativos para lógica compleja
   3. README.md en cada carpeta de /src/
   4. CHANGELOG.md para cambios significativos
@@ -456,7 +459,7 @@ description: "Nombres consistentes y descriptivos"
 
 rule: |
   Convenciones obligatorias:
-  
+
   - Componentes: PascalCase (TaskCard.tsx)
   - Hooks: camelCase con prefijo 'use' (useAvatar.ts)
   - Utils: camelCase (calculateVectorProgress.ts)
@@ -479,7 +482,7 @@ rule: |
   - CLS < 0.1
   - API Response p95 < 200ms
   - Bundle size monitoreado
-  
+
   Usar:
   - React.memo para componentes pesados
   - useMemo/useCallback apropiadamente
