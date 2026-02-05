@@ -1,7 +1,7 @@
 | #   | ID TAREA | NO. CAJA | NOMBRE TAREA                                                 | NO SUBCAJA    | TITULO SUBCAJA                       | RUTA PROYECTO                            | CHECKBOX |
-| 147 | 03.1.5   | CAJA 3   | Crear tabla avatar\_states                                   | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
-| 148 | 03.1.6   | CAJA 3   | Crear tabla wallets                                          | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
-| 149 | 03.1.7   | CAJA 3   | Crear tabla subscriptions                                    | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
-| 150 | 03.1.8   | CAJA 3   | Crear tabla daily\_tasks                                     | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
-| 151 | 03.1.9   | CAJA 3   | Crear tabla daily\_logs                                      | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
-| 152 | 03.1.10  | CAJA 3   | Crear tabla store\_items                                     | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
+| 147 | 03.1.5   | CAJA 3   | Crear tabla avatar\_states                                   | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
+| 148 | 03.1.6   | CAJA 3   | Crear tabla wallets                                          | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
+| 149 | 03.1.7   | CAJA 3   | Crear tabla subscriptions                                    | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
+| 150 | 03.1.8   | CAJA 3   | Crear tabla daily\_tasks                                     | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
+| 151 | 03.1.9   | CAJA 3   | Crear tabla daily\_logs                                      | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
+| 152 | 03.1.10  | CAJA 3   | Crear tabla store\_items                                     | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
