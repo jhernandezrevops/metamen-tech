@@ -31,25 +31,25 @@ dependencies:
     version: 16.6.1
   framer-motion:
     specifier: ^11.2.0
-    version: 11.18.2(react-dom@18.3.1)(react@18.3.1)
+    version: 11.18.2(react-dom@19.2.4)(react@19.2.4)
   lucide-react:
     specifier: ^0.396.0
-    version: 0.396.0(react@18.3.1)
+    version: 0.396.0(react@19.2.4)
   next:
     specifier: 14.2.5
-    version: 14.2.5(@babel/core@7.29.0)(@playwright/test@1.58.1)(react-dom@18.3.1)(react@18.3.1)
+    version: 14.2.5(@babel/core@7.29.0)(@playwright/test@1.58.1)(react-dom@19.2.4)(react@19.2.4)
   react:
-    specifier: 18.3.1
-    version: 18.3.1
+    specifier: 19.2.4
+    version: 19.2.4
   react-dom:
-    specifier: 18.3.1
-    version: 18.3.1(react@18.3.1)
+    specifier: 19.2.4
+    version: 19.2.4(react@19.2.4)
   react-hook-form:
     specifier: ^7.52.0
-    version: 7.71.1(react@18.3.1)
+    version: 7.71.1(react@19.2.4)
   recharts:
     specifier: ^2.12.0
-    version: 2.15.4(react-dom@18.3.1)(react@18.3.1)
+    version: 2.15.4(react-dom@19.2.4)(react@19.2.4)
   stripe:
     specifier: ^14.25.0
     version: 14.25.0
@@ -60,11 +60,11 @@ dependencies:
     specifier: ^3.4.4
     version: 3.4.19(tsx@4.21.0)
   zod:
-    specifier: ^3.25.76
+    specifier: ^3.23.8
     version: 3.25.76
   zustand:
     specifier: ^4.5.2
-    version: 4.5.7(@types/react@18.3.27)(react@18.3.1)
+    version: 4.5.7(@types/react@19.2.11)(react@19.2.4)
 
 devDependencies:
   '@commitlint/cli':
@@ -81,16 +81,16 @@ devDependencies:
     version: 6.9.1
   '@testing-library/react':
     specifier: ^15.0.0
-    version: 15.0.7(@types/react@18.3.27)(react-dom@18.3.1)(react@18.3.1)
+    version: 15.0.7(@types/react@19.2.11)(react-dom@19.2.4)(react@19.2.4)
   '@types/node':
     specifier: ^20.14.0
     version: 20.19.31
   '@types/react':
-    specifier: ^18.3.3
-    version: 18.3.27
+    specifier: ^19.2.11
+    version: 19.2.11
   '@types/react-dom':
-    specifier: ^18.3.0
-    version: 18.3.7(@types/react@18.3.27)
+    specifier: ^19.2.3
+    version: 19.2.3(@types/react@19.2.11)
   '@typescript-eslint/eslint-plugin':
     specifier: ^7.18.0
     version: 7.18.0(@typescript-eslint/parser@7.18.0)(eslint@8.57.1)(typescript@5.9.3)
@@ -964,7 +964,7 @@ packages:
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.71.1(react@18.3.1)
+      react-hook-form: 7.71.1(react@19.2.4)
     dev: false
 
   /@humanwhocodes/config-array@0.13.0:
@@ -1502,7 +1502,7 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react@15.0.7(@types/react@18.3.27)(react-dom@18.3.1)(react@18.3.1):
+  /@testing-library/react@15.0.7(@types/react@19.2.11)(react-dom@19.2.4)(react@19.2.4):
     resolution: {integrity: sha512-cg0RvEdD1TIhhkm1IeYMQxrzy0MtUNfa3minv4MjbgcYzJAZ7yD0i0lwoPOTPr+INtiXFezt2o8xMSnyHhEn2Q==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -1515,10 +1515,10 @@ packages:
     dependencies:
       '@babel/runtime': 7.28.6
       '@testing-library/dom': 10.4.1
-      '@types/react': 18.3.27
-      '@types/react-dom': 18.3.7(@types/react@18.3.27)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      '@types/react': 19.2.11
+      '@types/react-dom': 18.3.7(@types/react@19.2.11)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
     dev: true
 
   /@tybys/wasm-util@0.10.1:
@@ -1625,21 +1625,25 @@ packages:
     resolution: {integrity: sha512-oN9ive//QSBkf19rfDv45M7eZPi0eEXylht2OLEXicu5b4KoQ1OzXIw+xDSGWxSxe1JmepRR/ZH283vsu518/Q==}
     dev: false
 
-  /@types/prop-types@15.7.15:
-    resolution: {integrity: sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==}
-
-  /@types/react-dom@18.3.7(@types/react@18.3.27):
+  /@types/react-dom@18.3.7(@types/react@19.2.11):
     resolution: {integrity: sha512-MEe3UeoENYVFXzoXEWsvcpg6ZvlrFNlOQ7EOsvhI3CfAXwzPfO8Qwuxd40nepsYKqyyVQnTdEfv68q91yLcKrQ==}
     peerDependencies:
       '@types/react': ^18.0.0
     dependencies:
-      '@types/react': 18.3.27
+      '@types/react': 19.2.11
     dev: true
 
-  /@types/react@18.3.27:
-    resolution: {integrity: sha512-cisd7gxkzjBKU2GgdYrTdtQx1SORymWyaAFhaxQPK9bYO9ot3Y5OikQRvY0VYQtvwjeQnizCINJAenh/V7MK2w==}
+  /@types/react-dom@19.2.3(@types/react@19.2.11):
+    resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
+    peerDependencies:
+      '@types/react': ^19.2.0
     dependencies:
-      '@types/prop-types': 15.7.15
+      '@types/react': 19.2.11
+    dev: true
+
+  /@types/react@19.2.11:
+    resolution: {integrity: sha512-tORuanb01iEzWvMGVGv2ZDhYZVeRMrw453DCSAIn/5yvcSVnMoUMTyf33nQJLahYEnv9xqrTNbgz4qY5EfSh0g==}
+    dependencies:
       csstype: 3.2.3
 
   /@types/ws@8.18.1:
@@ -3652,7 +3656,7 @@ packages:
     resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
     dev: true
 
-  /framer-motion@11.18.2(react-dom@18.3.1)(react@18.3.1):
+  /framer-motion@11.18.2(react-dom@19.2.4)(react@19.2.4):
     resolution: {integrity: sha512-5F5Och7wrvtLVElIpclDT0CBzMVg3dL22B64aZwHtsIY8RB4mXICLrkajK4G9R+ieSAGcgrLeae2SeUTg2pr6w==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
@@ -3668,8 +3672,8 @@ packages:
     dependencies:
       motion-dom: 11.18.1
       motion-utils: 11.18.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
       tslib: 2.8.1
     dev: false
 
@@ -4471,12 +4475,12 @@ packages:
     dependencies:
       yallist: 3.1.1
 
-  /lucide-react@0.396.0(react@18.3.1):
+  /lucide-react@0.396.0(react@19.2.4):
     resolution: {integrity: sha512-N/zP+9vEfEYHiMWMpjwH/M5diaV0e4UFe07BpgdzaRYce5QvXi87hixf7F0Xqdr3zuX/9u7H/2D4MVXIK22O0A==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: 18.3.1
+      react: 19.2.4
     dev: false
 
   /lz-string@1.5.0:
@@ -4635,7 +4639,7 @@ packages:
       randexp: 0.4.6
     dev: true
 
-  /next@14.2.5(@babel/core@7.29.0)(@playwright/test@1.58.1)(react-dom@18.3.1)(react@18.3.1):
+  /next@14.2.5(@babel/core@7.29.0)(@playwright/test@1.58.1)(react-dom@19.2.4)(react@19.2.4):
     resolution: {integrity: sha512-0f8aRfBVL+mpzfBjYfQuLWh2WyAwtJXCRfkPF4UJ5qd2YwrHczsrSzXU4tRMV0OAxR8ZJZWPFn6uhSC56UTsLA==}
     engines: {node: '>=18.17.0'}
     deprecated: This version has a security vulnerability. Please upgrade to a patched version. See https://nextjs.org/blog/security-update-2025-12-11 for more details.
@@ -4661,9 +4665,9 @@ packages:
       caniuse-lite: 1.0.30001767
       graceful-fs: 4.2.11
       postcss: 8.4.31
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      styled-jsx: 5.1.1(@babel/core@7.29.0)(react@18.3.1)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+      styled-jsx: 5.1.1(@babel/core@7.29.0)(react@19.2.4)
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.2.5
       '@next/swc-darwin-x64': 14.2.5
@@ -5201,22 +5205,21 @@ packages:
       ret: 0.1.15
     dev: true
 
-  /react-dom@18.3.1(react@18.3.1):
-    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+  /react-dom@19.2.4(react@19.2.4):
+    resolution: {integrity: sha512-AXJdLo8kgMbimY95O2aKQqsz2iWi9jMgKJhRBAxECE4IFxfcazB2LmzloIoibJI3C12IlY20+KFaLv+71bUJeQ==}
     peerDependencies:
-      react: ^18.3.1
+      react: ^19.2.4
     dependencies:
-      loose-envify: 1.4.0
-      react: 18.3.1
-      scheduler: 0.23.2
+      react: 19.2.4
+      scheduler: 0.27.0
 
-  /react-hook-form@7.71.1(react@18.3.1):
+  /react-hook-form@7.71.1(react@19.2.4):
     resolution: {integrity: sha512-9SUJKCGKo8HUSsCO+y0CtqkqI5nNuaDqTxyqPsZPqIwudpj4rCrAz/jZV+jn57bx5gtZKOh3neQu94DXMc+w5w==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
     dependencies:
-      react: 18.3.1
+      react: 19.2.4
     dev: false
 
   /react-is@16.13.1:
@@ -5234,7 +5237,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-smooth@4.0.4(react-dom@18.3.1)(react@18.3.1):
+  /react-smooth@4.0.4(react-dom@19.2.4)(react@19.2.4):
     resolution: {integrity: sha512-gnGKTpYwqL0Iii09gHobNolvX4Kiq4PKx6eWBCYYix+8cdw+cGo3do906l1NBPKkSWx1DghC1dlWG9L2uGd61Q==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -5242,12 +5245,12 @@ packages:
     dependencies:
       fast-equals: 5.4.0
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-transition-group: 4.4.5(react-dom@18.3.1)(react@18.3.1)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+      react-transition-group: 4.4.5(react-dom@19.2.4)(react@19.2.4)
     dev: false
 
-  /react-transition-group@4.4.5(react-dom@18.3.1)(react@18.3.1):
+  /react-transition-group@4.4.5(react-dom@19.2.4)(react@19.2.4):
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
     peerDependencies:
       react: '>=16.6.0'
@@ -5257,15 +5260,13 @@ packages:
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
     dev: false
 
-  /react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+  /react@19.2.4:
+    resolution: {integrity: sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==}
     engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: 1.4.0
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -5291,7 +5292,7 @@ packages:
       decimal.js-light: 2.5.1
     dev: false
 
-  /recharts@2.15.4(react-dom@18.3.1)(react@18.3.1):
+  /recharts@2.15.4(react-dom@19.2.4)(react@19.2.4):
     resolution: {integrity: sha512-UT/q6fwS3c1dHbXv2uFgYJ9BMFHu3fwnd7AYZaEQhXuYQ4hgsxLvsUXzGdKeZrW5xopzDCvuA2N41WJ88I7zIw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -5301,10 +5302,10 @@ packages:
       clsx: 2.1.1
       eventemitter3: 4.0.7
       lodash: 4.17.23
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
       react-is: 18.3.1
-      react-smooth: 4.0.4(react-dom@18.3.1)(react@18.3.1)
+      react-smooth: 4.0.4(react-dom@19.2.4)(react@19.2.4)
       recharts-scale: 0.4.5
       tiny-invariant: 1.3.3
       victory-vendor: 36.9.2
@@ -5482,10 +5483,8 @@ packages:
       is-regex: 1.2.1
     dev: true
 
-  /scheduler@0.23.2:
-    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
-    dependencies:
-      loose-envify: 1.4.0
+  /scheduler@0.27.0:
+    resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
   /semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -5802,7 +5801,7 @@ packages:
       qs: 6.14.1
     dev: false
 
-  /styled-jsx@5.1.1(@babel/core@7.29.0)(react@18.3.1):
+  /styled-jsx@5.1.1(@babel/core@7.29.0)(react@19.2.4):
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -5817,7 +5816,7 @@ packages:
     dependencies:
       '@babel/core': 7.29.0
       client-only: 0.0.1
-      react: 18.3.1
+      react: 19.2.4
     dev: false
 
   /sucrase@3.35.1:
@@ -6124,12 +6123,12 @@ packages:
       punycode: 2.3.1
     dev: true
 
-  /use-sync-external-store@1.6.0(react@18.3.1):
+  /use-sync-external-store@1.6.0(react@19.2.4):
     resolution: {integrity: sha512-Pp6GSwGP/NrPIrxVFAIkOQeyw8lFenOHijQWkUTrDvrF4ALqylP2C/KCkeS9dpUM3KvYRQhna5vt7IL95+ZQ9w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     dependencies:
-      react: 18.3.1
+      react: 19.2.4
     dev: false
 
   /util-deprecate@1.0.2:
@@ -6508,7 +6507,7 @@ packages:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
     dev: false
 
-  /zustand@4.5.7(@types/react@18.3.27)(react@18.3.1):
+  /zustand@4.5.7(@types/react@19.2.11)(react@19.2.4):
     resolution: {integrity: sha512-CHOUy7mu3lbD6o6LJLfllpjkzhHXSBlX8B9+qPddUsIfeF5S/UZ5q0kmCsnRqT1UHFQZchNFDDzMbQsuesHWlw==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -6523,7 +6522,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.3.27
-      react: 18.3.1
-      use-sync-external-store: 1.6.0(react@18.3.1)
+      '@types/react': 19.2.11
+      react: 19.2.4
+      use-sync-external-store: 1.6.0(react@19.2.4)
     dev: false
