@@ -1,13 +1,3 @@
 | #   | ID TAREA | NO. CAJA | NOMBRE TAREA                                                 | NO SUBCAJA    | TITULO SUBCAJA                       | RUTA PROYECTO                            | CHECKBOX |
-| 147 | 03.1.5   | CAJA 3   | Crear tabla avatar\_states                                   | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 148 | 03.1.6   | CAJA 3   | Crear tabla wallets                                          | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 149 | 03.1.7   | CAJA 3   | Crear tabla subscriptions                                    | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 150 | 03.1.8   | CAJA 3   | Crear tabla daily\_tasks                                     | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 151 | 03.1.9   | CAJA 3   | Crear tabla daily\_logs                                      | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 152 | 03.1.10  | CAJA 3   | Crear tabla store\_items                                     | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 153 | 03.1.11  | CAJA 3   | Crear tabla inventory                                        | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 154 | 03.1.12  | CAJA 3   | Crear tabla tool\_progress                                   | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 155 | 03.1.13  | CAJA 3   | Crear tabla activity\_logs                                   | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 156 | 03.1.14  | CAJA 3   | Crear tabla image\_generation\_queue                         | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 157 | 03.1.15  | CAJA 3   | Crear tabla notifications                                    | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
-| 158 | 03.1.16  | CAJA 3   | Crear tabla idempotency\_keys                                | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
+
+| 159 | 03.1.17  | CAJA 3   | Validar migración completa                                   | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x] ✅ **APROBADA** |
