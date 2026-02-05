@@ -411,6 +411,12 @@ CREATE TABLE public.activity_logs (
 
 CREATE INDEX idx_activity_logs_user_id ON public.activity_logs (user_id);
 
+CREATE INDEX idx_activity_logs_action ON public.activity_logs (action);
+
+CREATE INDEX idx_activity_logs_created ON public.activity_logs (created_at);
+
+CREATE INDEX idx_activity_logs_user_action ON public.activity_logs (user_id, action);
+
 -- Comentarios para activity_logs
 COMMENT ON TABLE public.activity_logs IS 'Log de actividad para analytics y auditoría';
 
@@ -467,6 +473,14 @@ CREATE TABLE public.notifications (
 );
 
 CREATE INDEX idx_notifications_user_id ON public.notifications (user_id);
+
+CREATE INDEX idx_notifications_unread ON public.notifications (user_id, is_read)
+WHERE
+  is_read = FALSE;
+
+CREATE INDEX idx_notifications_type ON public.notifications (type);
+
+CREATE INDEX idx_notifications_created ON public.notifications (created_at);
 
 -- Comentarios para notifications
 COMMENT ON TABLE public.notifications IS 'Notificaciones in-app persistentes';
