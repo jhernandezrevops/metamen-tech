@@ -1,8 +1,7 @@
 | #   | ID TAREA | NO. CAJA | NOMBRE TAREA                                                 | NO SUBCAJA    | TITULO SUBCAJA                       | RUTA PROYECTO                            | CHECKBOX |
-
-| 140 | 02.8.1   | CAJA 2   | Crear estructura de carpetas                                 | SUBCAJA 02.8  | Estructura de Carpetas               | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
-| 141 | 02.8.2   | CAJA 2   | Crear archivos placeholder                                   | SUBCAJA 02.8  | Estructura de Carpetas               | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
-| 142 | 02.8.3   | CAJA 2   | Documentar estructura en README                              | SUBCAJA 02.8  | Estructura de Carpetas               | \docs\00\_planning\cajas\caja\_2.0.0.md  | [x]      |
-| 143 | 03.1.1   | CAJA 3   | Crear archivo de migración inicial                           | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
-| 144 | 03.1.2   | CAJA 3   | Agregar función helper updated\_at                           | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
-
+| 147 | 03.1.5   | CAJA 3   | Crear tabla avatar\_states                                   | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
+| 148 | 03.1.6   | CAJA 3   | Crear tabla wallets                                          | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
+| 149 | 03.1.7   | CAJA 3   | Crear tabla subscriptions                                    | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
+| 150 | 03.1.8   | CAJA 3   | Crear tabla daily\_tasks                                     | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
+| 151 | 03.1.9   | CAJA 3   | Crear tabla daily\_logs                                      | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |
+| 152 | 03.1.10  | CAJA 3   | Crear tabla store\_items                                     | SUBCAJA 03.1  | Schema de Base de Datos              | \docs\00\_planning\cajas\caja\_3.0.0.md  | [x]      |

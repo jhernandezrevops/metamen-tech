@@ -142,6 +142,21 @@ CREATE TRIGGER set_avatar_states_updated_at before
 UPDATE ON public.avatar_states FOR each ROW
 EXECUTE function public.fn_update_updated_at ();
 
+-- Comentarios para avatar_states
+COMMENT ON TABLE public.avatar_states IS 'Estado actual del avatar: vectores, salud, progresión';
+
+COMMENT ON COLUMN public.avatar_states.aura_lvl IS 'Vector AURA: presencia, magnetismo (1-13, Arquetipo Mental)';
+
+COMMENT ON COLUMN public.avatar_states.face_lvl IS 'Vector JAWLINE: definición facial (1-13, Arquetipo Cara)';
+
+COMMENT ON COLUMN public.avatar_states.wealth_lvl IS 'Vector WEALTH: apariencia de éxito (1-13, Arquetipo Productividad)';
+
+COMMENT ON COLUMN public.avatar_states.muscle_lvl IS 'Vector PHYSIQUE-Músculo: masa muscular (1-13, Arquetipo Físico)';
+
+COMMENT ON COLUMN public.avatar_states.fat_lvl IS 'Vector PHYSIQUE-Grasa: grasa corporal (13=obeso → 1=definido, INVERSO)';
+
+COMMENT ON COLUMN public.avatar_states.env_lvl IS 'Vector ENV: calidad del entorno (1-13)';
+
 -- TABLA: wallets
 CREATE TABLE public.wallets (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -161,6 +176,13 @@ CREATE INDEX idx_wallets_user_id ON public.wallets (user_id);
 CREATE TRIGGER set_wallets_updated_at before
 UPDATE ON public.wallets FOR each ROW
 EXECUTE function public.fn_update_updated_at ();
+
+-- Comentarios para wallets
+COMMENT ON TABLE public.wallets IS 'Balance de BTC virtual del usuario';
+
+COMMENT ON COLUMN public.wallets.btc_balance IS 'Balance actual de BTC (moneda virtual)';
+
+COMMENT ON COLUMN public.wallets.daily_cap IS 'Máximo de BTC ganables por día (sin bonos)';
 
 -- TABLA: subscriptions
 CREATE TABLE public.subscriptions (
@@ -188,6 +210,13 @@ CREATE TRIGGER set_subscriptions_updated_at before
 UPDATE ON public.subscriptions FOR each ROW
 EXECUTE function public.fn_update_updated_at ();
 
+-- Comentarios para subscriptions
+COMMENT ON TABLE public.subscriptions IS 'Estado de suscripción y datos de Stripe';
+
+COMMENT ON COLUMN public.subscriptions.trial_ends_at IS 'El trial termina el día 6 a las 00:00';
+
+COMMENT ON COLUMN public.subscriptions.limbo_started_at IS 'Timestamp de entrada a modo limbo';
+
 -- TABLA: daily_tasks
 CREATE TABLE public.daily_tasks (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -214,9 +243,26 @@ CREATE TABLE public.daily_tasks (
 
 CREATE INDEX idx_daily_tasks_user_id ON public.daily_tasks (user_id);
 
+CREATE INDEX idx_daily_tasks_user_day ON public.daily_tasks (user_id, day_number);
+
+CREATE INDEX idx_daily_tasks_user_date ON public.daily_tasks (user_id, task_date);
+
+CREATE INDEX idx_daily_tasks_status ON public.daily_tasks (status);
+
+CREATE INDEX idx_daily_tasks_pending ON public.daily_tasks (user_id, status)
+WHERE
+  status = 'pending';
+
 CREATE TRIGGER set_daily_tasks_updated_at before
 UPDATE ON public.daily_tasks FOR each ROW
 EXECUTE function public.fn_update_updated_at ();
+
+-- Comentarios para daily_tasks
+COMMENT ON TABLE public.daily_tasks IS 'Tareas diarias del protocolo y personalizadas';
+
+COMMENT ON COLUMN public.daily_tasks.vector_modifiers IS 'JSON con modificadores: {"aura_lvl": 0.05}';
+
+COMMENT ON COLUMN public.daily_tasks.tool_id IS 'Herramienta asociada: library, gym, meditation, etc.';
 
 -- TABLA: daily_logs
 CREATE TABLE public.daily_logs (
@@ -245,6 +291,19 @@ CREATE TABLE public.daily_logs (
 
 CREATE INDEX idx_daily_logs_user_id ON public.daily_logs (user_id);
 
+CREATE INDEX idx_daily_logs_user_day ON public.daily_logs (user_id, day_number);
+
+CREATE INDEX idx_daily_logs_date ON public.daily_logs (log_date);
+
+CREATE INDEX idx_daily_logs_status ON public.daily_logs (status);
+
+-- Comentarios para daily_logs
+COMMENT ON TABLE public.daily_logs IS 'Registro histórico inmutable de cada día';
+
+COMMENT ON COLUMN public.daily_logs.vectors_snapshot IS 'Snapshot de todos los vectores al cierre';
+
+COMMENT ON COLUMN public.daily_logs.closed_at IS 'Timestamp de Judgement Night';
+
 -- TABLA: store_items
 CREATE TABLE public.store_items (
   id serial PRIMARY KEY,
@@ -268,9 +327,24 @@ CREATE TABLE public.store_items (
 
 CREATE INDEX idx_store_items_category ON public.store_items (category);
 
+CREATE INDEX idx_store_items_level ON public.store_items (level_required);
+
+CREATE INDEX idx_store_items_active ON public.store_items (is_active)
+WHERE
+  is_active = TRUE;
+
+CREATE INDEX idx_store_items_price ON public.store_items (price_btc);
+
 CREATE TRIGGER set_store_items_updated_at before
 UPDATE ON public.store_items FOR each ROW
 EXECUTE function public.fn_update_updated_at ();
+
+-- Comentarios para store_items
+COMMENT ON TABLE public.store_items IS 'Catálogo de items disponibles en tienda';
+
+COMMENT ON COLUMN public.store_items.vector_requirements IS 'Requisitos de vectores: {"fat_lvl": {"max": 5}}';
+
+COMMENT ON COLUMN public.store_items.prompt_tokens IS 'Tokens para agregar al prompt de IA';
 
 -- TABLA: inventory
 CREATE TABLE public.inventory (
@@ -291,6 +365,11 @@ CREATE INDEX idx_inventory_user_id ON public.inventory (user_id);
 CREATE TRIGGER set_inventory_updated_at before
 UPDATE ON public.inventory FOR each ROW
 EXECUTE function public.fn_update_updated_at ();
+
+-- Comentarios para inventory
+COMMENT ON TABLE public.inventory IS 'Items comprados por el usuario';
+
+COMMENT ON COLUMN public.inventory.locked_until_level IS 'Si murió, debe alcanzar este nivel para usar el item';
 
 -- TABLA: tool_progress
 CREATE TABLE public.tool_progress (
@@ -314,6 +393,11 @@ CREATE TRIGGER set_tool_progress_updated_at before
 UPDATE ON public.tool_progress FOR each ROW
 EXECUTE function public.fn_update_updated_at ();
 
+-- Comentarios para tool_progress
+COMMENT ON TABLE public.tool_progress IS 'Progreso del usuario en cada herramienta del arsenal';
+
+COMMENT ON COLUMN public.tool_progress.progress_data IS 'JSON flexible con datos específicos de la herramienta';
+
 -- TABLA: activity_logs
 CREATE TABLE public.activity_logs (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -326,6 +410,11 @@ CREATE TABLE public.activity_logs (
 );
 
 CREATE INDEX idx_activity_logs_user_id ON public.activity_logs (user_id);
+
+-- Comentarios para activity_logs
+COMMENT ON TABLE public.activity_logs IS 'Log de actividad para analytics y auditoría';
+
+COMMENT ON COLUMN public.activity_logs.details IS 'JSON con detalles específicos de la acción';
 
 -- TABLA: image_generation_queue
 CREATE TABLE public.image_generation_queue (
@@ -356,6 +445,11 @@ CREATE TRIGGER set_image_queue_updated_at before
 UPDATE ON public.image_generation_queue FOR each ROW
 EXECUTE function public.fn_update_updated_at ();
 
+-- Comentarios para image_generation_queue
+COMMENT ON TABLE public.image_generation_queue IS 'Cola de generación de imágenes de avatar';
+
+COMMENT ON COLUMN public.image_generation_queue.priority IS '1-3: Alta, 4-6: Normal, 7-10: Baja';
+
 -- TABLA: notifications
 CREATE TABLE public.notifications (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -373,6 +467,11 @@ CREATE TABLE public.notifications (
 );
 
 CREATE INDEX idx_notifications_user_id ON public.notifications (user_id);
+
+-- Comentarios para notifications
+COMMENT ON TABLE public.notifications IS 'Notificaciones in-app persistentes';
+
+COMMENT ON COLUMN public.notifications.action_url IS 'Ruta interna o URL externa';
 
 -- TABLA: idempotency_keys
 CREATE TABLE public.idempotency_keys (
