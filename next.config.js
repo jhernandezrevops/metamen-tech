@@ -82,7 +82,7 @@ const nextConfig = {
       fullUrl: true,
     },
   },
-  // output: 'standalone',
+  output: Boolean(process.env.CI) ? 'standalone' : undefined,
   poweredByHeader: false,
 };
 

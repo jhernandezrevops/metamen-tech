@@ -1,20 +1,13 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo "🔍 Running pre-push checks..."
+echo "🚀 Running pre-push checks..."
 
-# Type checking
-echo "📝 Type checking..."
-pnpm type-check || {
-  echo "❌ Type check failed. Push aborted."
+# Linting and Unit tests (según especificación caja_2.0.0.md)
+echo "🧹 Running linter and unit tests..."
+pnpm lint && pnpm test:unit || {
+  echo "❌ Pre-push checks failed. Push aborted."
   exit 1
 }
-
-# Unit tests
-# echo "🧪 Running unit tests..."
-# pnpm test:unit || {
-#   echo "❌ Unit tests failed. Push aborted."
-#   exit 1
-# }
 
 echo "✅ Pre-push checks passed!"
